@@ -1,0 +1,90 @@
+@charset "UTF-8";
+.container {
+  width: 1170px;
+  margin: auto;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 960px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 750px;
+    width: 95%;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+.button {
+  border-radius: 10px;
+  background-color: #ffd200;
+  padding: 17px 30px;
+  margin-left: 30px;
+}
+
+/*Стили для шапки*/
+.navbar {
+  padding: 6px 0;
+}
+
+.navbar__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar__phone {
+  text-decoration: none;
+  color: #333333;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.navbar__address {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  color: #333333;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.navbar__button {
+  color: #333333;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .navbar__contact {
+    display: none;
+  }
+  .navbar__button {
+    padding: 15px 26px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
