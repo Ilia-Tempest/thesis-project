@@ -15,7 +15,27 @@
 img
   max-width: 100%
 .button
+  cursor: pointer
   border-radius: 10px
-  background-color: $main-color
+  background-color: $main-color 
   padding: 17px 30px
   margin-left: 30px
+  outline: none
+  &:hover
+    background-color: lighten($main-color, 10%)
+.section
+  padding: 90px 0
+  &-title
+    font-size: 24px
+    +bold
+  &-subtitle
+    font-size: 16px
+.input
+  border-radius: 10px
+  border: 1px solid #dddddd
+  font-size: 15px
+  outline: none
+  &:focus
+    border: 1px solid $main-color
+    
+  
