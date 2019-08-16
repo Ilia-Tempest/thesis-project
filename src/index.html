@@ -7,6 +7,7 @@
   <title>Сайт по ремонту квартир</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/slick.css">
 </head>
 <body>
   <nav class="navbar">
@@ -128,6 +129,39 @@
       <!-- /.container -->
     </section>
     <!-- /.offer -->
+    <section class="section portfolio">
+      <div class="container">
+        <h2 class="section-title portfolio__title">
+          Работая с 2007 года,
+          мы сделали более 500 ремонтов в квартирах и домах
+        </h2>
+        <div class="slider">
+          <div class="slider__item"><img src="./img/portfolio/slider_1.jpg" class="slider__image" alt="f"></div>
+          <!-- /.slider__item -->
+          <div class="slider__item"><img src="./img/portfolio/slider_2.jpg" class="slider__image" alt=""></div>
+          <!-- /.slider__item -->
+          <div class="slider__item"><img src="./img/portfolio/slider_3.jpg" class="slider__image" alt=""></div>
+          <!-- /.slider__item -->
+          <div class="slider__item"><img src="./img/portfolio/slider_1.jpg" class="slider__image" alt=""></div>
+          <!-- /.slider__item -->
+          <div class="slider__item"><img src="./img/portfolio/slider_2.jpg" class="slider__image" alt=""></div>
+          <!-- /.slider__item -->
+          <div class="slider__item"><img src="./img/portfolio/slider_3.jpg" class="slider__image" alt=""></div>
+          <!-- /.slider__item -->
+        </div>
+        <!-- /.slider -->
+        <div class="arrows">
+          <div class="arrows__left">
+            <img src="img/portfolio/left-arrows.png" alt="">
+          </div>
+          <div class="arrows__right">
+            <img src="img/portfolio/right-arrows.png" alt="">
+          </div>
+        </div>
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.section portfolio -->
   </main>
 
  <div class="modal" id="modal">
@@ -144,5 +178,37 @@
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
   <script src="js/modal.js"></script>
+  <script src="js/slick.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.slider').slick({
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  prevArrow: $('.arrows__left'),
+  nextArrow: $('.arrows__right'),
+  responsive: [
+    {
+  breakpoint: 1200,
+      settings: {
+        arrows: false,
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+
+
+});
+    });
+  </script>
 </body>
 </html>
