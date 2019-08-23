@@ -1,0 +1,101 @@
+.brif
+  background-image: url(../img/brif/brif-left.jpg) , url(../img/brif/brif-right.jpg)
+  background-position: left center , right center
+  background-size: 50% , contain
+  background-repeat: repeat-y , no-repeat
+  &-block
+    display: flex
+  &__interview
+    flex-basis: 50%
+    padding-right: 70px
+  &__form
+    flex-basis: 50%
+    padding-left: 200px
+.interview
+  &
+  &__title
+    font-size: 22px
+    margin-bottom: 50px
+  &__subtitle
+    font-size: 16px  
+    display: block
+    margin-bottom: 100px
+  &-list
+    +bold
+    list-style: none
+    padding: 0
+    &__item
+      display: flex
+      align-items: center
+      margin-bottom: 30px
+    &__counter
+      border: 2px solid $main-text
+      width: 35px
+      line-height: 35px
+      text-align: center
+      border-radius: 50%
+      margin-right: 30px
+    &__text
+      max-width: 380px     
+.form
+  text-align: center
+  
+  &__title
+    font-size: 22px
+    margin-bottom: 50px
+  &__subtitle
+    font-size: 16px  
+    display: block
+    margin-bottom: 100px
+  &__input
+    width: 100%
+    max-width: 370px
+    margin-bottom: 15px
+  &__button
+    width: 100%
+    max-width: 370px
+    margin: 0
+    margin-bottom: 30px
+  &__description
+    display: block
+    font-size: 15px
+@media (max-width: 1200px)
+  .brif
+    &__form
+      padding-left: 30px
+    .interview
+      padding-right: 30px
+    &__title
+      font-size: 20px
+      margin-bottom: 15px
+    &__subtitle
+      margin-bottom: 30px
+    &-list
+      &__text
+        font-size: 14px
+        max-width: 300px
+      &__counter
+        margin-right: 20px
+.form
+  &__title
+    font-size: 20px
+    margin-bottom: 15px
+  &__subtitle
+    margin-bottom: 30px
+
+@media (max-width: 768px)
+ .brif
+  background-image: url(../img/brif/brif-left.jpg) , url(../img/brif/brif-right.jpg)
+  background-position: top center , center bottom
+  background-size: 100% 50% , cover
+  background-repeat: repeat-x , no-repeat
+  &-block
+    flex-direction: column
+  &__form
+    margin-top: 80px
+
+
+
+  
+
+      

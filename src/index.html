@@ -110,9 +110,9 @@
             Оставьте заявку на разработку 
             бесплатного дизайн-проекта!
           </span>
-          <form action="" class="form offer__form">
-            <input type="text" class="input offer__input" placeholder="Ваше имя">
-            <input type="tel" class="input offer__input" placeholder="Ваш телефон">
+          <form action="" id="offer-form" class="form offer__form">
+            <input type="text" class="input offer__input" name="username" placeholder="Ваше имя">
+            <input type="tel" name="phone" class="input offer__input phone" placeholder="Ваш телефон">
             <button class="button offer__button">Получить бесплатный дизайн-проект</button>
           </form>
           <div class="offer-footer">
@@ -262,6 +262,59 @@
       <!-- /.container -->
     </section>
     <!-- /.section price -->
+
+   <section class="section brif">
+     <div class="container">
+       <div class="brif-block">
+       <div class="interview brif__interview">
+         <h3 class="interview__title">
+            Мы можем озвучить Вам примерную стоимость работы и материалов по телефону
+          </h3>
+          <span class="interview__subtitle">
+              Для этого нужно ответить на 4 вопроса:
+          </span>
+          <ul class="interview-list">
+            <li class="interview-list__item">
+              <span class="interview-list__counter">1.</span>
+              <span class="interview-list__text">Какова площадь помещения?</span>
+            </li>
+            <li class="interview-list__item">
+              <span class="interview-list__counter">2.</span>
+              <span class="interview-list__text">У Вас новостройка или вторичное жилье?</span>
+            </li>
+            <li class="interview-list__item">
+              <span class="interview-list__counter">3.</span>
+              <span class="interview-list__text">Где находится помещение, в котором будет 
+                  производиться ремонт?</span>
+            </li>
+            <li class="interview-list__item">
+              <span class="interview-list__counter">4.</span>
+              <span class="interview-list__text">Назначение помещения?</span>
+            </li>
+          </ul>
+
+       </div>
+       <!-- /.interview brif__interview -->
+       <div class="form brif__form">
+         <h3 class="form__title">
+            Оставьте заявку на бесплатный 
+            расчет ремонта по телефону</h3>
+          <span class="form__subtitle">Для этого заполните форму ниже</span>
+          <form action="#" id="brif-form">
+            <input type="text" class="input form__input" name="username" placeholder="Ваше имя">
+            <input type="tel" class="input form__input phone" name="phone" placeholder="Ваш телефон">
+            <input type="email" class="input form__input" name="email" placeholder="Ваша почта">
+            <button class="button form__button">Рассчитать стоимость</button>
+          </form>
+          <span class="form__description">Мы перезвоним Вам в течение 60 секунд</span>
+       </div>
+       <!-- /.form brif__form -->
+       </div>
+     </div>
+     <!-- /.container -->
+    
+   </section>
+   <!-- /.section brif -->
   </main>
 
  <div class="modal" id="modal">
@@ -280,9 +333,65 @@
   <script src="js/modal.js"></script>
   <script src="js/slick.min.js"></script>
   <script src="js/wow.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/jquery.maskedinput.min.js"></script>
   <script>
     new WOW().init();
     $(document).ready(function(){
+
+      
+      $('#brif-form').validate({
+        rules: {
+    username: {
+      required: true,
+      minlength: 2
+    },
+    email: {
+      required: true,
+      email: true
+    },
+    phone: {
+      required: true
+    }
+  },
+messages: {
+  username: {
+    required: "Введите ваше имя",
+    minlength: jQuery.validator.format("Введите ещё {0} символа")
+  },
+  email: {
+    required: "Введите ваш email",
+    email: "Введите коректный email"
+  },
+  phone: {
+    required: "Укажите телефон"
+  }
+}
+});
+
+$('#offer-form').validate({
+        rules: {
+    username: {
+      required: true,
+      minlength: 2
+    },
+    phone: {
+      required: true
+    }
+  },
+messages: {
+  username: {
+    required: "Введите ваше имя",
+    minlength: jQuery.validator.format("Введите ещё {0} символа")
+  },
+  phone: {
+    required: "Укажите телефон"
+  }
+}
+      });
+
+$(".phone").mask("+7 (999) 999-99-99");
+
       $('.slider').slick({
   infinite: true,
   slidesToShow: 3,
